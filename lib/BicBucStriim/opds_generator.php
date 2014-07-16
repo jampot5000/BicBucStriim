@@ -310,9 +310,6 @@ class OpdsGenerator {
     $this->navigationCatalogLink($this->bbs_root.'/opds/', 'start');
     $this->navigationCatalogLink($this->bbs_root.'/opds/', 'up');
     # Content
-    $url = '/serieslist/all/';
-    $this->navigationEntry("all", $url, "all", $url, 
-        self::OPDS_MIME_NAV);
     foreach($entries as $entry) {
       $url = '/serieslist/'.$entry->initial.'/';
       $this->navigationEntry($entry->initial, $url, $this->l10n->message('opds_series').$entry->ctr, $url, 
