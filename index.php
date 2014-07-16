@@ -1135,16 +1135,16 @@ function kindle($id, $file) {
 	$filename = "";
 	if($details['series']!=null)
 	{
-		$filename += $details['series'][0]->name;
-		$filename += "[" + $details['book']->series_index +"] ";
+		$filename .= $details['series'][0]->name;
+		$filename .= "[" . $details['book']->series_index ."] ";
 		
 	}
-	$filename += $details['book']->title;
-	$filename += " - ";
+	$filename .= $details['book']->title;
+	$filename .= " - ";
 	foreach ($details['authors'] as $author) {
-			$filename+=$author->name;
+			$filename.=$author->name;
 	}
-	$filename+=".mobi";
+	$filename.=".mobi";
 	# Validate request e-mail format
 	$to_email = $app->request()->post('email');
 	if (!isEMailValid($to_email)) {
